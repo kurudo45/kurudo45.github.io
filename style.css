@@ -3,7 +3,7 @@
 -------------------- */
 
 :root {
-  --theme-color: #00a0a0;
+  --theme-color: #cfcf28;
 }
 
 * {
@@ -15,11 +15,16 @@ html, body {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 30px;
   color: #333;
 }
+
 
 /* --------------------
         見出し
@@ -28,6 +33,21 @@ body {
 h1, h2, h3 {
   color: var(--theme-color);
   border-bottom: dashed 0.1em var(--theme-color);
+}
+
+h3 {
+  scroll-margin-top: 1rem;
+}
+/* --------------------
+        note クラス
+-------------------- */
+
+.note {
+  font-size: 0.85rem;
+  color: #666;
+  background: #fffbe6;
+  border-left: 4px solid var(--theme-color);
+  padding: 0.4rem 0.8rem;
 }
 
 /* --------------------
@@ -62,7 +82,7 @@ table {
   min-width: 70%;
 }
 tr {
-  background-color: #fff;
+  background-color: #f1f3b8;
 }
 tr:nth-child(2n) {
   background-color: #f9f9f9;
@@ -74,4 +94,12 @@ th {
 th, td {
   border: solid 1px #f0f0f0;
   padding: 0.5rem;
+}
+
+/* --------------------
+      ページ内リンクの動きを減らす設定
+-------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
